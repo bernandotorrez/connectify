@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><?=WEB_TITLE;?></title>
+  <title><?=WEB_TITLE.' - '. $title;?></title>
 
   <!-- Meta tag -->
   <meta charset="utf-8" />
@@ -26,6 +26,7 @@
   <!-- shortcodes -->
   <link href="<?=base_url('template/assets/css/shortcodes/shortcodes.css');?>" rel="stylesheet">
   <!-- Style CSS -->
+  <link href="<?=base_url('template/assets/css/shortcodes/login.css');?>" rel="stylesheet">
   <link href="<?=base_url('template/assets/style.css');?>" rel="stylesheet">
   <!-- Place your css here -->
   <!-- RS5.0 Main Stylesheet -->
@@ -47,10 +48,9 @@
     <!-- Tampilkan menu -->
   
     <!-- Tampilkan content web -->
-    <?php echo $_content;?>
-    tes
-    <div id="content">
 
+    <div id="content">
+    <?php echo $_content;?>
     </div>
     <!-- Tampilkan menu -->
     
@@ -150,6 +150,17 @@
 
                 });
             });
+        </script>
+
+        <script>
+            $('.toggle').on('click', function() {
+              $('.login-wrapper').stop().addClass('active');
+            });
+
+            $('.close').on('click', function() {
+              $('.login-wrapper').stop().removeClass('active');
+            });
+
         </script>
 
 

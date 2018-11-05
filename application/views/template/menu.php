@@ -2,45 +2,60 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-  <!--header start-->
-        <header id="header" class="tt-nav transparent-header">
+        <!-- Top bar start-->
+        <div class="top-bar light-blue visible-md visible-lg">
+          <div class="container">
+            <div class="row">
+              <!-- Social Icon -->
+              <div class="col-md-6">
+                <!-- Social Icon -->
+                <ul class="list-inline social-top tt-animate btt">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                  <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                </ul>
+              </div>
 
-            <div class="header-sticky light-header">
+              <div class="col-md-6 text-right">
+                <ul class="topbar-cta no-margin">
+                  <li class="mr-20">
+                    <a><i class="material-icons mr-10">&#xE0B9;</i>info@materialize.com</a>
+                  </li>
+                  <li>
+                    <a><i class="material-icons mr-10">&#xE0CD;</i> +01 123 456 78</a>
+                  </li>
+                </ul>
+              </div>
+            </div><!-- /.row -->
+          </div><!-- /.container -->
+        </div>
+        <!-- Top bar end-->
+  
+
+        <!--header start-->
+        <header id="header" class="tt-nav nav-border-bottom">
+
+            <div class="header-sticky light-header ">
 
                 <div class="container">
 
-                    <div class="search-wrapper">
-                        <div class="search-trigger light pull-right">
-                            <div class='search-btn'></div>
-                            <i class="material-icons">&#xE8B6;</i>
-                        </div>
-
-                        <!-- Modal Search Form -->
-                        <i class="search-close material-icons">&#xE5CD;</i>
-                        <div class="search-form-wrapper">
-                            <form action="#" class="white-form">
-                                <div class="input-field">
-                                    <input type="text" name="search" id="search">
-                                    <label for="search" class="">Search Here...</label>
-                                </div>
-                                <button class="btn pink search-button waves-effect waves-light" type="submit"><i class="material-icons">&#xE8B6;</i></button>
-                                
-                            </form>
-                        </div>
-                    </div><!-- /.search-wrapper -->
+                   
 
                     <div id="materialize-menu" class="menuzord">
 
                         <!--logo start-->
                         <a href="index.html" class="logo-brand">
-                            <img class="logo-dark" src="assets/img/logo.png" alt=""/>
-                            <img class="logo-light" src="assets/img/logo-white.png" alt=""/>
+                            <img class="retina" src="<?=base_url('template/assets/img/logo.png');?>" alt=""/>
                         </a>
                         <!--logo end-->
 
                         <!--mega menu start-->
-                        <ul class="menuzord-menu pull-right light">
-                            <li class="active"><a href="javascript:void(0)">Home</a>
+                        <ul class="menuzord-menu pull-right">
+                            <li><a href="javascript:void(0)">Home</a>
                                 <div class="megamenu">
                                     <div class="megamenu-row">
                                         <div class="col3">
@@ -48,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <ul class="list-unstyled clearfix">
                                                 <li><a href="index.html">Home Default</a></li>
                                                 <li><a href="index-2.html">Home Canvas</a></li>
-                                                <li class="active"><a href="index-3.html">Home Elegent</a></li>
+                                                <li><a href="index-3.html">Home Elegent</a></li>
                                                 <li><a href="index-4.html">Home Startup</a></li>
                                                 <li><a href="index-5-consulting.html">Home Consulting</a></li>
                                                 <li><a href="op-index-coffeeshop.html" target="_blank">Home Coffee Shop</a></li>
@@ -91,7 +106,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </div>
                             </li>
 
-                            <li><a href="javascript:void(0)">Pages</a>
+                            <li class="active"><a href="javascript:void(0)">Pages</a>
                                 <div class="megamenu">
                                     <div class="megamenu-row">
                                         <div class="col3">
@@ -128,8 +143,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <h2>Menu Type Page</h2>
                                             <ul class="list-unstyled">
                                                 <li><a href="typography.html">Typography</a></li>
-                                                <li><a href="login-form.html">Login/Register 1</a></li>
-                                                <li><a href="login-form-2.html" target="_blank">Login/Register 2</a></li>
+                                                <li class="active"><a href="login-form.html">Login/Register 1</a></li>
+                                                <li><a href="login-form-2.html">Login/Register 2</a></li>
+                                                <li><a href="coming-soon-1.html" target="_blank">Coming Soon 1</a></li>
+                                                <li><a href="coming-soon-2.html" target="_blank">Coming Soon 2</a></li>
                                             </ul>
                                         </div>
 
@@ -432,12 +449,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <li><a href="contact-us-2.html">Contact Two</a></li>
                                 </ul>
                             </li>
+
                         </ul>
                         <!--mega menu end-->
 
                     </div>
                 </div>
             </div>
-
         </header>
+        <!--header end-->
         <!--header end-->

@@ -3,72 +3,57 @@ $csrf_name  = $this->security->get_csrf_token_name();
 $csrf_hash  = $this->security->get_csrf_hash();
 ?>
 
-    <div class="page-header header-filter" style="background-image: url('<?=base_url("template/assets/img/bg7.jpg');");?>" background-size: cover; background-position: top center;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-                    <div class="card card-signup">
-                        <form class="form" method="post" id="login-form">
-                            <div class="header header-success text-center">
-                                <h4 class="card-title">Sign in</h4>
-                                <div class="social-line">
+   <section class="section-padding gray-bg">
+            <div class="container">
 
-                                </div>
-                          </div>
-                          
-                            <div class="card-content">
-
-                                
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="material-icons">email</i>
-                                    </span>
-                                    <input type="text" id="email" name="email" class="form-control" placeholder="Email..." minlength="10" maxlength="100">
-                                    <span class="help-block" id="error"></span>
-                                </div>
-
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="material-icons">lock_outline</i>
-                                    </span>
-                                    <input type="password" id="password" name="password" placeholder="Password..." class="form-control" minlength="5" maxlength="50"/>
-                                    <span class="help-block" id="error"></span>
-                                </div>
-                                  <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="material-icons"></i>
-                                    </span>
-                                    <?=$captcha;?>
-                                    <span class="help-block" id="error"></span>
-                                </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="material-icons">warning</i>
-                                    </span>
-                                    <input type="text" id="captcha" name="captcha" placeholder="Masukkan angka acak di atas..." class="form-control" minlength="5" maxlength="5"/>
-                                    <span class="help-block" id="error"></span>
-                                </div>
-                                <input type="hidden" name="<?=$csrf_name;?>" value="<?=$csrf_hash;?>"/>
-                                <!-- If you want to add a checkbox to this form, uncomment this code
-
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="optionsCheckboxes" checked>
-                                        Subscribe to newsletter
-                                    </label>
-                                </div> -->
-                            </div>
-                            <div class="footer text-center">
-                                <button type="submit" class="btn btn-success btn-lg" name="btn-login" id="btn-login">Sign In</button>
-                                 <br>Belum Punya Akun?<a href="<?=base_url('register');?>" class="btn btn-success btn-simple btn-wd btn-lg">Sign Up<div class="ripple-container"></div></a>
-                                 <br>Lupa Password?<a href="<?=base_url('reset');?>" class="btn btn-success btn-simple btn-wd btn-lg">Reset Password<div class="ripple-container"></div></a>
-                            </div>
-                        </form>
-                    </div>
+                <div class="login-wrapper">
+                  <div class="card-wrapper"></div>
+                  <div class="card-wrapper">
+                    <h1 class="title">Login</h1>
+                    <form>
+                      <div class="input-container">
+                        <input type="text" id="username" required="required" autocomplete="off" />
+                        <label for="username">Username</label>
+                        <div class="bar"></div>
+                      </div>
+                      <div class="input-container">
+                        <input type="password" id="password" required="required" autocomplete="off" />
+                        <label for="password">Password</label>
+                        <div class="bar"></div>
+                      </div>
+                      <div class="button-container">
+                        <a href="#." class="btn btn-lg btn-block waves-effect waves-light">Login</a>
+                      </div>
+                      <div class="footer"><a href="#">Forgot your password?</a></div>
+                    </form>
+                  </div>
+                  <div class="card-wrapper alt">
+                    <div class="toggle"></div>
+                    <h1 class="title">Register
+                      <div class="close"></div>
+                    </h1>
+                    <form>
+                      <div class="input-container">
+                        <input type="text" id="newusername" required="required" autocomplete="off" />
+                        <label for="newusername">Username</label>
+                        <div class="bar"></div>
+                      </div>
+                      <div class="input-container">
+                        <input type="password" id="newpassword" required="required" autocomplete="off" />
+                        <label for="newpassword">Password</label>
+                        <div class="bar"></div>
+                      </div>
+                      <div class="input-container">
+                        <input type="password" id="repeat-password" required="required" autocomplete="off" />
+                        <label for="repeat-password">Repeat Password</label>
+                        <div class="bar"></div>
+                      </div>
+                      <div class="button-container">
+                        <a href="#." class="btn btn-lg btn-block white waves-effect waves-red">Registar</a>
+                      </div>
+                    </form>
+                  </div>
                 </div>
+
             </div>
-        </div>
-      
-
-    </div>
-
+        </section>

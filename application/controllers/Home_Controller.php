@@ -9,7 +9,7 @@ class Home_Controller extends CI_Controller {
 	}
 
 	public function index($id=NULL){
-		$data['a'] = 'tes';
+		$data['title'] = 'Home';
 		$this->template->display('content/index',$data);
 	}
 
