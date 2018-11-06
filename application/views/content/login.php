@@ -10,50 +10,66 @@ $csrf_hash  = $this->security->get_csrf_hash();
                   <div class="card-wrapper"></div>
                   <div class="card-wrapper">
                     <h1 class="title">Login</h1>
-                    <form>
+                    <form method="post" id="form-login">
                       <div class="input-container">
-                        <input type="text" id="username" required="required" autocomplete="off" />
+                        <input type="text" id="username" name="username" autocomplete="off" />
                         <label for="username">Username</label>
                         <div class="bar"></div>
                       </div>
                       <div class="input-container">
-                        <input type="password" id="password" required="required" autocomplete="off" />
+                        <input type="password" id="password" name="password" />
                         <label for="password">Password</label>
                         <div class="bar"></div>
                       </div>
                       <div class="button-container">
-                        <a href="#." class="btn btn-lg btn-block waves-effect waves-light">Login</a>
+                        <button class="btn btn-lg btn-block waves-effect waves-light" type="submit" id="btn-login">Login
+                        </button>
+                        <div class="footer" id="message"></div>
                       </div>
+                      
                       <div class="footer"><a href="#">Forgot your password?</a></div>
                     </form>
                   </div>
                   <div class="card-wrapper alt">
+                    
                     <div class="toggle"></div>
+
                     <h1 class="title">Register
                       <div class="close"></div>
+                      <div class="footer" id="message1"></div>
                     </h1>
-                    <form>
+
+                    <form method="post" id="form-register">
+
                       <div class="input-container">
-                        <input type="text" id="newusername" required="required" autocomplete="off" />
+                        <input type="text" id="newusername" name="newusername" autocomplete="off" />
                         <label for="newusername">Username</label>
                         <div class="bar"></div>
                       </div>
                       <div class="input-container">
-                        <input type="password" id="newpassword" required="required" autocomplete="off" />
+                        <input type="password" id="newpassword" name="newpassword"/>
                         <label for="newpassword">Password</label>
                         <div class="bar"></div>
                       </div>
                       <div class="input-container">
-                        <input type="password" id="repeat-password" required="required" autocomplete="off" />
+                        <input type="password" id="repeat-password" />
                         <label for="repeat-password">Repeat Password</label>
                         <div class="bar"></div>
                       </div>
+
                       <div class="button-container">
-                        <a href="#." class="btn btn-lg btn-block white waves-effect waves-red">Registar</a>
+                        
+                         <button class="btn btn-lg btn-block white waves-effect waves-red" type="submit" id="btn-register">Register
+                        </button>
+                        
                       </div>
+                     
+                      
+                     
                     </form>
                   </div>
                 </div>
 
             </div>
         </section>
+

@@ -70,6 +70,7 @@
         <!-- End Preloader -->
 
     <!-- Place your js here -->
+    <noscript>Please enable yout javaScript!</noscript>
     <script src="<?=base_url('template/assets/js/jquery-2.1.3.min.js');?>"></script>
     <script src="<?=base_url('template/assets/bootstrap/js/bootstrap.min.js');?>"></script>
     <script src="<?=base_url('template/assets/materialize/js/materialize.min.js');?>"></script>
@@ -91,13 +92,13 @@
     <script src="<?=base_url('template/assets/revolution/js/jquery.themepunch.tools.min.js');?>"></script>
     <script src="<?=base_url('template/assets/revolution/js/jquery.themepunch.revolution.min.js');?>"></script>
 
-    <script type="text/javascript" src="<?=base_url('template/assets/assets/revolution/js/extensions/revolution.extension.slideanims.min.js');?>"></script>
-    <script type="text/javascript" src="<?=base_url('template/assets/assets/revolution/js/extensions/revolution.extension.actions.min.js');?>"></script>
-    <script type="text/javascript" src="<?=base_url('template/assets/assets/revolution/js/extensions/revolution.extension.layeranimation.min.js');?>"></script>
-    <script type="text/javascript" src="<?=base_url('template/assets/assets/revolution/js/extensions/revolution.extension.kenburn.min.js');?>"></script>
-    <script type="text/javascript" src="<?=base_url('template/assets/assets/revolution/js/extensions/revolution.extension.navigation.min.js');?>"></script>
-    <script type="text/javascript" src="<?=base_url('template/assets/assets/revolution/js/extensions/revolution.extension.migration.min.js');?>"></script>
-    <script type="text/javascript" src="<?=base_url('template/assets/assets/revolution/js/extensions/revolution.extension.parallax.min.js');?>"></script>
+    <script type="text/javascript" src="<?=base_url('template/assets/revolution/js/extensions/revolution.extension.slideanims.min.js');?>"></script>
+    <script type="text/javascript" src="<?=base_url('template/assets/revolution/js/extensions/revolution.extension.actions.min.js');?>"></script>
+    <script type="text/javascript" src="<?=base_url('template/assets/revolution/js/extensions/revolution.extension.layeranimation.min.js');?>"></script>
+    <script type="text/javascript" src="<?=base_url('template/assets/revolution/js/extensions/revolution.extension.kenburn.min.js');?>"></script>
+    <script type="text/javascript" src="<?=base_url('template/assets/revolution/js/extensions/revolution.extension.navigation.min.js');?>"></script>
+    <script type="text/javascript" src="<?=base_url('template/assets/revolution/js/extensions/revolution.extension.migration.min.js');?>"></script>
+    <script type="text/javascript" src="<?=base_url('template/assets/revolution/js/extensions/revolution.extension.parallax.min.js');?>"></script>
 
      <script type="text/javascript">
             jQuery(document).ready(function() {
@@ -163,6 +164,17 @@
 
         </script>
 
+        <!-- Jquery validation -->
+      <?php if($url == 'login') { ?>
+        <script type="text/javascript" src="<?=base_url('template/assets/js/login.js');?>">
+          
+        </script>
+
+        <script type="text/javascript" src="<?=base_url('template/assets/js/register.js');?>">
+          
+        </script>
+      <?php } ?>
+      <!-- Jquery validation -->
 
     <!-- Place your js here -->
 

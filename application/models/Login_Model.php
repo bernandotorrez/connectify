@@ -8,8 +8,22 @@ Class Login_Model extends CI_Model{
 		parent::__construct();
 	}
 
-	public function cek_login($table,$where){		
-		return $this->db->get_where($table,$where,1);
+	public function do_login($params){		
+		$this->db->where('username', $params['username']);
+		$this->db->where('password', md5($params['password']));
+		$query = $this->db->get('login');
+
+		if($query->num_rows() > 0 ){
+			$array = array('message' => 'ok',
+							'data' => $query->result_array());
+		} else {
+			$array = array('message' => 'error',
+							'data' => 'error');
+		}
+
+		return $array;
+
+		
 	}
 
 	public function update($email,$table,$data){   

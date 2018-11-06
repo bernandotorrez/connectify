@@ -57,6 +57,8 @@ $route['translate_uri_dashes'] = FALSE;
 /*Add custom Route*/
 $route['login'] = 'Auth_Controller/login';
 $route['register'] = 'Auth_Controller/register';
+$route['reset'] = 'Auth_Controller/reset';
+$route['home/how-to-use'] = 'Home_Controller/how_to_use';
 $route['(:any)'] = '$1_Controller';
 $route['(:any)/(:any)'] = '$1_Controller/$2';
 $route['(:any)/(:any)/(:any)'] = '$1_Controller/$2/$3';
