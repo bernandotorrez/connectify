@@ -40,7 +40,7 @@
 		      $.ajax({
 		        
 		      type : 'POST',
-		      url  : 'http://localhost/connectify/auth/do_register',
+		      url  : $('#url').val()+'auth/do_login',
 		      data : {newusername : newusername, newpassword : newpassword, level : level},
 		      dataType: 'json',
 		      beforeSend: function()

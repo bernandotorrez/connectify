@@ -36,7 +36,7 @@
 		      $.ajax({
 		        
 		      type : 'POST',
-		      url  : 'http://localhost/connectify/auth/do_login',
+		      url  : $('#url').val()+'auth/do_login',
 		      data : {username : username, password : password},
 		      dataType: 'json',
 		      beforeSend: function()

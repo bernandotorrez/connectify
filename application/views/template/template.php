@@ -71,6 +71,8 @@
         </div>
         <!-- End Preloader -->
 
+    <input type="hidden" id="url" value="<?=base_url();?>">
+
     <!-- Place your js here -->
     <noscript>Please enable yout javaScript!</noscript>
     <script src="<?=base_url('template/assets/js/jquery-2.1.3.min.js');?>"></script>
