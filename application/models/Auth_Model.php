@@ -40,7 +40,13 @@ Class Auth_Model extends CI_Model{
 
 		$query = $this->db->insert('login', $data);
 
-		return $query;
+		if($query){
+			$callback = 'ok';
+		} else {
+			$callback = 'error';
+		}
+
+		return $callback;
 	}
 
 	public function cek_data_login($params){		

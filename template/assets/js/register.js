@@ -40,7 +40,7 @@
 		      $.ajax({
 		        
 		      type : 'POST',
-		      url  : $('#url').val()+'auth/do_login',
+		      url  : $('#url').val()+'auth/do_register',
 		      data : {newusername : newusername, newpassword : newpassword, level : level},
 		      dataType: 'json',
 		      beforeSend: function()
@@ -56,13 +56,15 @@
 			  },
 		      success :  function(response)
 		         { 
+
+		         	
 		         	          
 		          if(response=="ok"){
 		               
 		        	$("#btn-register").html('SUCCESS').prop('disabled', true);
 		        	$('#message1').html(tampil('Register Success','', 'success'));
-		        	setTimeout('location.reload()', 1000);
-		          } if(response=="exists"){
+		        	//setTimeout('location.reload()', 1000);
+		          } else if(response=="exists"){
                
 		        	$("#btn-register").html('LOGIN').prop('disabled', false);
 		        	$('#message1').html(tampil('Akun sudah terdaftar','', 'info'));
