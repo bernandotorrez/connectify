@@ -52,7 +52,6 @@ Class Auth_Model extends CI_Model{
 	public function cek_data_login($params){		
 		
 		$this->db->where('username', $params['username']);
-		$this->db->where('password', md5($params['password']));
 		$query = $this->db->get('login');
 
 		if($query->num_rows() > 0){
