@@ -9,6 +9,7 @@ Class Template {
 	}
 
 	function display($template,$data=NULL){
+		$data['session'] = $this->_ci->session->userdata();
 		$data['_menu'] = $this->_ci->load->view('template/menu',$data, true);
 		$data['_content'] = $this->_ci->load->view($template,$data, true);
 		$data['_footer'] = $this->_ci->load->view('template/footer',$data, true);

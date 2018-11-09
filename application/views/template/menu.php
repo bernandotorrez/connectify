@@ -13,21 +13,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <ul class="list-inline social-top tt-animate btt">
                   <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                   <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
-                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                   <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                  <li><a href="#"><i class="fa fa-rss"></i></a></li>
                 </ul>
               </div>
 
               <div class="col-md-6 text-right">
                 <ul class="topbar-cta no-margin">
                   <li class="mr-20">
-                    <a><i class="material-icons mr-10">&#xE0B9;</i>info@materialize.com</a>
+                    <a><i class="material-icons mr-10">&#xE0B9;</i>mail@bernand.tech</a>
                   </li>
                   <li>
-                    <a><i class="material-icons mr-10">&#xE0CD;</i> +01 123 456 78</a>
+                    <a><i class="material-icons mr-10">&#xE0CD;</i> +82 896 876 106 39 </a>
                   </li>
                 </ul>
               </div>
@@ -57,14 +53,47 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!--mega menu start-->
                         <ul class="menuzord-menu pull-right">
 
+                            <!-- Home Menu -->
+
                             <?php if($url=='' OR $url=='home') { ?>
-                                <li class="active">
+                            <li class="active">
                             <?php } else { ?>
                             <li>
                             <?php } ?>
                             <a href="<?=base_url();?>">Home</a>
                             </li>
 
+                            <!-- Home Menu -->
+
+
+
+                            <!-- Organizer and Participant Menu -->
+
+                            <?php if($session['level'] == 'Organizer') { ?>
+
+                            <?php if($url=='event') { ?>
+                            <li class="active">
+                            <?php } else { ?>
+                            <li>
+                            <?php } ?>
+                            <a href="<?=base_url('publish-event');?>">Publish Event</a>
+
+                            <?php } elseif($session['level'] == 'Participant') { ?>
+
+                            <?php if($url=='event') { ?>
+                            <li class="active">
+                            <?php } else { ?>
+                            <li>
+                            <?php } ?>
+                            <a href="<?=base_url('join-event');?>">Join Event</a>
+
+                            <?php } ?>
+
+                            <!-- Organizer and Participant Menu -->
+
+
+
+                            <!-- Information Menu -->
                             
                             <li><a href="javascript:void(0)">Information</a>
                                 <ul class="dropdown">
@@ -75,20 +104,41 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </ul>
                             </li>
 
+                            <!-- Information Menu -->
+
                             
 
-                            <?php if($url=='login' OR $url=='register' OR $url=='reset') { ?>
+                            <!-- Login Register Logout Profil Menu -->
+
+                            <?php if($url=='login' OR $url=='reset') { ?>
                                 <li class="active">
                             <?php } else { ?>
                                 <li>
                             <?php } ?>
+
+                            <?php if($session['level'] == ''){ ?>
                                 <a href="javascript:void(0)">Log In / Register</a>
+                                
                                 <ul class="dropdown">
                                     <li><a href="<?=base_url('login');?>">Log In</a></li>
-                                    <li><a href="<?=base_url('register');?>">Register</a></li>
                                     <li><a href="<?=base_url('reset');?>">Reset Password</a></li>
                                 </ul>
+                              <?php } elseif($session['level'] != 'Admin') { ?>
+                                <a href="javascript:void(0)" style="text-transform: none;"><?=$session['username'];?></a>
+                                <ul class="dropdown">
+                                    <li><a href="<?=base_url('logout');?>">Log Out</a></li>
+                                    <li><a href="<?=base_url('profile');?>">Profile</a></li>
+                                </ul>
+                              <?php } else { ?>
+                                <a href="javascript:void(0)" style="text-transform: none;"><?=$session['username'];?></a>
+                                <ul class="dropdown">
+                                    <li><a href="<?=base_url('admin');?>">Panel Admin</a></li>
+                                    <li><a href="<?=base_url('logout');?>">Log Out</a></li>
+                                </ul>
+                              <?php } ?>
                             </li>
+
+                             <!-- Login Register Logout Profil Menu -->
 
                         </ul>
                         <!--mega menu end-->

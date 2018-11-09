@@ -51,10 +51,15 @@ $csrf_hash  = $this->security->get_csrf_hash();
                         <label for="newpassword">Password</label>
                         <div class="bar"></div>
                       </div>
+                      
                       <div class="input-container">
-                        <input type="password" id="repeat-password" />
-                        <label for="repeat-password">Repeat Password</label>
-                        <div class="bar"></div>
+                        <select class="form-control" id="level" name="level">
+                          <option value="-">Daftar Sebagai</option>
+                          <option value="Participant">Participant</option>
+                          <option value="Organizer">Organizer</option>
+                        </select>
+                        
+                        
                       </div>
 
                       <div class="button-container">

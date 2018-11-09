@@ -1,8 +1,9 @@
 	$('#form-register').submit(function(){
             
-            var username = $('#newusername').val();
-            var password = $('#newpassword').val();
-            var confirm_password = $('#repeat-password').val();
+            var newusername = $('#newusername').val();
+            var newpassword = $('#newpassword').val();
+            //var confirm_password = $('#repeat-password').val();
+            var level = $('#level').val();
 
             function tampil(tampil, form, alert){
             	 var tampil = '<div class="alert alert-'+alert+'">'+tampil+'</div>';
@@ -12,18 +13,19 @@
             	 return tampil;
             }
 
-            if(username.trim() == ''){
+            if(newusername.trim() == ''){
               	$('#message1').html(tampil('Isi <strong>Username</strong> Kamu', 'newusername', 'info'));
-            } else if(username.length <= '5'){
+            } else if(newusername.length <= '5'){
             	$('#message1').html(tampil('<strong>Username</strong> minimal 5 Karakter','newusername', 'info'));
-            } else if(password.trim() == ''){
+            } else if(newpassword.trim() == ''){
               	$('#message1').html(tampil('Isi <strong>Password</strong> Kamu','newpassword', 'info'));
-            } else if(password.length <= '5'){
+            } else if(newpassword.length <= '5'){
             	$('#message1').html(tampil('<strong>Password</strong> minimal 5 Karakter','newpassword', 'info'));
-            } else if(password.trim() != confirm_password.trim()){
-            	$('#message1').html(tampil('<strong>Password</strong> tidak sesuai','newpassword', 'info'));
-            }  else {
+            } else if(level == '-'){
+            	$('#message1').html(tampil('<strong>Daftar Sebagai</strong> harus dipilih','level', 'info'));
+            } else {
             	ajax();
+            	return false;
             }
 
             return false;
@@ -39,7 +41,7 @@
 		        
 		      type : 'POST',
 		      url  : 'http://localhost/connectify/auth/do_register',
-		      data : {username : username, password : password},
+		      data : {newusername : newusername, newpassword : newpassword, level : level},
 		      dataType: 'json',
 		      beforeSend: function()
 		      { 
@@ -54,15 +56,19 @@
 			  },
 		      success :  function(response)
 		         { 
-		         //console.log(response.message);           
-		          if(response.message=="ok"){
+		         	          
+		          if(response=="ok"){
 		               
 		        	$("#btn-register").html('SUCCESS').prop('disabled', true);
-		        	$('#message1').html(tampil('Login Success','', 'success'));
+		        	$('#message1').html(tampil('Register Success','', 'success'));
 		        	setTimeout('location.reload()', 1000);
+		          } if(response=="exists"){
+               
+		        	$("#btn-register").html('LOGIN').prop('disabled', false);
+		        	$('#message1').html(tampil('Akun sudah terdaftar','', 'info'));
 		          } else {
 		             $("#btn-register").html('LOGIN').prop('disabled', false);
-		             $('#message1').html(tampil('<strong>Username</strong> atau <strong>Password</strong> anda salah','', 'info'));
+		             $('#message1').html(tampil('Register Fail','', 'info'));
 		          }
 
 		        }
